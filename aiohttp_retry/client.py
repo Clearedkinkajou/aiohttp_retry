@@ -157,7 +157,7 @@ class _RequestContext:
         exc_tb: Optional[TracebackType],
     ) -> None:
         if self._response is not None:
-            if not self._response.closed:
+            if self._response.closed:
                 self._response.close()
 
 
